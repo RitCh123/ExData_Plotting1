@@ -9,7 +9,7 @@ weekday <- weekdays(as.Date(homePower$Date[homePower$Date == "02/01/2007" | home
 v1 <- c(0, match("Friday", weekday), length(weekday))
 #labelling the days of the week
 labels <- c(weekdays(as.Date("02/01/2007", format = "%m/%d/%Y"), abbreviate = TRUE), weekdays(as.Date("02/01/2007", format = "%m/%d/%Y") + 1, abbreviate = TRUE),  weekdays(as.Date("02/01/2007", format = "%m/%d/%Y") + 2, abbreviate = TRUE))
-plot(globalPower, type="l", xaxt="n", ylab = "Global Active Power (kilowatts)")
+plot(globalPower, type="l", xaxt="n", ylab = "Global Active Power (kilowatts)", xlab = "")
 axis(side = 1,
      at = v1,
      labels=labels)
