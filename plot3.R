@@ -7,8 +7,9 @@ subThree <- homePower$Sub_metering_3[homePower$Date == "02/01/2007" | homePower$
 
 weekday <- weekdays(as.Date(homePower$Date[homePower$Date == "02/01/2007" | homePower$Date == "02/02/2007"], format = "%m/%d/%Y"))
 #plotting
-
-plot(subOne, type="l", xaxt = "n", col = "black", xlab = "", ylab = "Energy sub metering")
+png("plot3.png", width=480, height=480)
+plot(subOne, type="l", xaxt = "n", col = "black", xlab = "", ylab = "Energy sub metering",
+     ylim = range(as.numeric(subOne)))
 
 lines(subTwo, col = "red")
 
@@ -25,5 +26,6 @@ axis(side = 1,
 
 #add a legend
 
-legend("topright", legend=names(homePower)[7:9], lty = c(1,1,1), col = c("black", "red", "blue"))
+legend("topright", legend=names(homePower)[7:9], lty = c(1,1,1), col = c("black", "red", "blue"), cex = 0.8, pt.cex = 1)
 
+dev.off()
